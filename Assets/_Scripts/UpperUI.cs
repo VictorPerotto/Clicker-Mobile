@@ -7,11 +7,11 @@ public class UpperUI : MonoBehaviour{
     [SerializeField] private TextMeshProUGUI coinsText;
 
     private void Start(){
-        CoinsManager.Instance.OnCurrentCoinsChanged += CoinsManager_OnCurrentCoinsChanged;
+
     }
 
-    private void CoinsManager_OnCurrentCoinsChanged(object sender, CoinsManager.OnCurrentCoinsChangedArgs e){
-        SetCoinsText(e.currentCoins);
+    private void Update(){
+        SetCoinsText(CoinsManager.Instance.GetCurrentCoins());
     }
 
     private void SetCoinsText(int amount){

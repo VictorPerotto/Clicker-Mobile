@@ -5,16 +5,14 @@ using UnityEngine;
 public class ResourceGenerator : MonoBehaviour{
     
     [SerializeField] private ResourceGeneratorSO resourceGeneratorSO;
-    [SerializeField] private bool isActive;
     private float timerMax;
     private float timer;
 
     private void Start(){
-        isActive = false;
     }
 
     private void Update(){
-        if(isActive){
+        if(resourceGeneratorSO.isActive){
             if(timer <= 0){
                 timer = timerMax;
                 CalculateCoins();
@@ -31,5 +29,7 @@ public class ResourceGenerator : MonoBehaviour{
 
     public void SetGenerator(ResourceGeneratorSO resourceGenerator){
         resourceGeneratorSO = resourceGenerator;
+        resourceGeneratorSO.isActive = false;
+        timerMax = resourceGeneratorSO.generationTime;
     }
 }

@@ -11,4 +11,5 @@ public class ResourceGeneratorSO : ScriptableObject{
     public int generationAmount; //how much resources this generate
     public int price;
     public Sprite sprite;
+    public bool isActive;
 }

@@ -22,11 +22,11 @@ public class ResourceGeneratorSingleUI : MonoBehaviour{
     private void SetResourceGeneratorSettings(){
         sprite.sprite = resourceGeneratorSO.sprite;
         resourceGenerator.SetGenerator(resourceGeneratorSO);
-        text.SetText("Buy X " + resourceGeneratorSO.name);
+        text.SetText("Buy 1 " + resourceGeneratorSO.name);
     }
 
     private void OnBuyButtonClicked(){
-        
+        ResourceGeneratorsManager.Instance.BuyResourceGenerator(resourceGeneratorSO);    
     }
 
     public void SetResourceGeneratorSO(ResourceGeneratorSO resourceGenerator){
