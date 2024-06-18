@@ -17,5 +17,5 @@ MonoBehaviour:
   generatorCount: 41
   generationAmount: 1
   price: 15
-  sprite: {fileID: 21300000, guid: 3c021c9f6d6eb2041bc911eb919a0bf7, type: 3}
-  isActive: 1
+  sprite: {fileID: 21300000, guid: cc376b4cdcee5a844805650c39ff6c2e, type: 3}
+  isActive: 0

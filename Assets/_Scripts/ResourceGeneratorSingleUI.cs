@@ -7,9 +7,10 @@ using UnityEngine.UI;
 public class ResourceGeneratorSingleUI : MonoBehaviour{
     
     [Header("Components")]
-    [SerializeField] private Image sprite;
+    [SerializeField] private Image iconSprite;
     [SerializeField] private Button button;
-    [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private TextMeshProUGUI buyText;
+    [SerializeField] private TextMeshProUGUI generatorCountText;
     [SerializeField] private ResourceGenerator resourceGenerator;
 
     private ResourceGeneratorSO resourceGeneratorSO;
@@ -20,13 +21,15 @@ public class ResourceGeneratorSingleUI : MonoBehaviour{
     }
 
     private void SetResourceGeneratorSettings(){
-        sprite.sprite = resourceGeneratorSO.sprite;
+        iconSprite.sprite = resourceGeneratorSO.sprite;
         resourceGenerator.SetGenerator(resourceGeneratorSO);
-        text.SetText("Buy 1 " + resourceGeneratorSO.name);
+        generatorCountText.SetText(resourceGeneratorSO.generatorCount.ToString());
+        buyText.SetText("Buy 1 " + resourceGeneratorSO.name);
     }
 
     private void OnBuyButtonClicked(){
-        ResourceGeneratorsManager.Instance.BuyResourceGenerator(resourceGeneratorSO);    
+        ResourceGeneratorsManager.Instance.BuyResourceGenerator(resourceGeneratorSO);
+        generatorCountText.SetText(resourceGeneratorSO.generatorCount.ToString());
     }
 
     public void SetResourceGeneratorSO(ResourceGeneratorSO resourceGenerator){
