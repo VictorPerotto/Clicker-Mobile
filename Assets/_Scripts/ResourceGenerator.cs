@@ -5,31 +5,37 @@ using UnityEngine;
 public class ResourceGenerator : MonoBehaviour{
     
     [SerializeField] private ResourceGeneratorSO resourceGeneratorSO;
+    [SerializeField] private ResourceGeneratorBar resourceGeneratorBar;
     private float timerMax;
     private float timer;
-
-    private void Start(){
-    }
 
     private void Update(){
         if(resourceGeneratorSO.isActive){
             if(timer <= 0){
                 timer = timerMax;
-                CalculateCoins();
+                AddCoinsGenerator();
             }
             timer -= Time.deltaTime;
         }
-    }
-
-    //calculate the amount of coins to add
-    private void CalculateCoins(){
-        int coins = resourceGeneratorSO.generationAmount * resourceGeneratorSO.generatorCount;
-        CoinsManager.Instance.AddCoins(coins);
     }
 
     public void SetGenerator(ResourceGeneratorSO resourceGenerator){
         resourceGeneratorSO = resourceGenerator;
         resourceGeneratorSO.isActive = false;
         timerMax = resourceGeneratorSO.generationTime;
+    }
+
+    //calculate the amount of coins to add
+    private void AddCoinsGenerator(){
+        int coins = GetAmountGeneration();
+        CoinsManager.Instance.AddCoins(coins);
+    }
+
+    public int GetAmountGeneration(){
+        return resourceGeneratorSO.generationAmount * resourceGeneratorSO.generatorCount;
+    }
+
+    public float GetTimerNormalized(){
+        return timer/timerMax;
     }
 }

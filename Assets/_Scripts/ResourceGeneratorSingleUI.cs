@@ -11,6 +11,7 @@ public class ResourceGeneratorSingleUI : MonoBehaviour{
     [SerializeField] private Button button;
     [SerializeField] private TextMeshProUGUI buyText;
     [SerializeField] private TextMeshProUGUI generatorCountText;
+    [SerializeField] private ResourceGeneratorBar resourceGeneratorBar;
     [SerializeField] private ResourceGenerator resourceGenerator;
 
     private ResourceGeneratorSO resourceGeneratorSO;
@@ -25,6 +26,7 @@ public class ResourceGeneratorSingleUI : MonoBehaviour{
         resourceGenerator.SetGenerator(resourceGeneratorSO);
         generatorCountText.SetText(resourceGeneratorSO.generatorCount.ToString());
         buyText.SetText("Buy 1 " + resourceGeneratorSO.name);
+        resourceGeneratorBar.SetBarGenerator(resourceGenerator);
     }
 
     private void OnBuyButtonClicked(){
