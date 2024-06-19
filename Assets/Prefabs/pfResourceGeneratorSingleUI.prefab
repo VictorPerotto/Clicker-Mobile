@@ -222,17 +222,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Buy 1 pirates
+  m_text: 15 <sprite index=35>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b075943bdc867964484f401492eb102c, type: 2}
-  m_sharedMaterial: {fileID: -1985819303684412482, guid: b075943bdc867964484f401492eb102c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a8095ecb1b75b4940b2bfe8f7dca1c76, type: 2}
+  m_sharedMaterial: {fileID: -1985819303684412482, guid: a8095ecb1b75b4940b2bfe8f7dca1c76, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -241,7 +241,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
+  m_spriteAsset: {fileID: 11400000, guid: ca2a2ad108b8a454597cb7322fd7cd98, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -809,6 +809,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3497516037484225423}
     m_Modifications:
+    - target: {fileID: 1215153112610653087, guid: 359bcf34f1f4fbf49ba9df9163d18d04, type: 3}
+      propertyPath: m_text
+      value: 1/s
+      objectReference: {fileID: 0}
     - target: {fileID: 1215153112610653087, guid: 359bcf34f1f4fbf49ba9df9163d18d04, type: 3}
       propertyPath: m_fontAsset
       value: 

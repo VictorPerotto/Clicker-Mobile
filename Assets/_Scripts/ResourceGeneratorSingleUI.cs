@@ -25,7 +25,7 @@ public class ResourceGeneratorSingleUI : MonoBehaviour{
         iconSprite.sprite = resourceGeneratorSO.sprite;
         resourceGenerator.SetGenerator(resourceGeneratorSO);
         generatorCountText.SetText(resourceGeneratorSO.generatorCount.ToString());
-        buyText.SetText("Buy 1 " + resourceGeneratorSO.name);
+        buyText.SetText(resourceGeneratorSO.price.ToString() + "<sprite index=35>");
         resourceGeneratorBar.SetBarGenerator(resourceGenerator);
     }
 
