@@ -7,9 +7,12 @@ public class ResourceGeneratorSO : ScriptableObject{
     
     public string generatorName;
     public float generationTime; //how much time to generate
+    public double generationAmount; //how much resources this generate
     public int generatorCount; //how much generators player have
-    public int generationAmount; //how much resources this generate
-    public int price;
+    public double showPrice; //how much money players need to this appears on UI
+    public double unlockPrice;
+    public double price;
     public Sprite sprite;
     public bool isActive;
+    public bool isUnlockable;
 }

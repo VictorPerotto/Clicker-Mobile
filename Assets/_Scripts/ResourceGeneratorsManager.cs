@@ -6,6 +6,11 @@ public class ResourceGeneratorsManager : MonoBehaviour{
     
     public static ResourceGeneratorsManager Instance;
 
+    [SerializeField] private float timerMax;
+    [SerializeField] private float timer;
+
+    public ResourceGeneratorListSO resourceGeneratorListSO;
+
     private void Awake(){
         if(Instance == null){
             Instance = this;
@@ -13,7 +18,7 @@ public class ResourceGeneratorsManager : MonoBehaviour{
     }
 
     public void BuyResourceGenerator(ResourceGeneratorSO resourceGenerator){
-        int totalCoins = CoinsManager.Instance.GetCurrentCoins();
+        double totalCoins = CoinsManager.Instance.GetCurrentCoins();
 
         if(totalCoins >= resourceGenerator.price){
             resourceGenerator.generatorCount += 1;
@@ -27,6 +32,16 @@ public class ResourceGeneratorsManager : MonoBehaviour{
     }
 
     void Update(){
-        
+        /*if(timer <= 0){
+            timer = timerMax;
+
+            foreach(var resourceGenerator in resourceGeneratorListSO.list){
+                if(!resourceGenerator.isUnlockable){
+                    if(CoinsManager.Instance.GetCurrentCoins() >= resourceGenerator.unlockPrice) resourceGenerator.isUnlockable = true;
+                }
+            }
+        }
+
+        timer -= Time.deltaTime;*/
     }
 }

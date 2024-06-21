@@ -27,11 +27,11 @@ public class ResourceGenerator : MonoBehaviour{
 
     //calculate the amount of coins to add
     private void AddCoinsGenerator(){
-        int coins = GetAmountGeneration();
+        double coins = GetAmountGeneration();
         CoinsManager.Instance.AddCoins(coins);
     }
 
-    public int GetAmountGeneration(){
+    public double GetAmountGeneration(){
         return resourceGeneratorSO.generationAmount * resourceGeneratorSO.generatorCount;
     }
 

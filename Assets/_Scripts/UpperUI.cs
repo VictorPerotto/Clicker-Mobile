@@ -14,7 +14,7 @@ public class UpperUI : MonoBehaviour{
         SetCoinsText(CoinsManager.Instance.GetCurrentCoins());
     }
 
-    private void SetCoinsText(int amount){
+    private void SetCoinsText(double amount){
         string amountText = amount.ToString();
 
         coinsText.SetText(amountText);

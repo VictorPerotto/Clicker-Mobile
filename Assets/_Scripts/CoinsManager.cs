@@ -9,10 +9,10 @@ public class CoinsManager : MonoBehaviour
     public event EventHandler<OnCurrentCoinsChangedArgs> OnCurrentCoinsChanged;
 
     public class OnCurrentCoinsChangedArgs : EventArgs{
-        public int currentCoins;
+        public double currentCoins;
     }
 
-    [SerializeField] private int currentCoins;
+    [SerializeField] private double currentCoins;
     
     private void Awake(){
         if(Instance == null){
@@ -20,17 +20,17 @@ public class CoinsManager : MonoBehaviour
         }
     }
 
-    public void AddCoins(int amount){
+    public void AddCoins(double amount){
         OnCurrentCoinsChanged?.Invoke(this, new OnCurrentCoinsChangedArgs{currentCoins = currentCoins});
         currentCoins += amount;
     }
 
-    public void SubtractCoins(int amount){
+    public void SubtractCoins(double amount){
         OnCurrentCoinsChanged?.Invoke(this, new OnCurrentCoinsChangedArgs{currentCoins = currentCoins});
         currentCoins -= amount;
     }
 
-    public int GetCurrentCoins(){
+    public double GetCurrentCoins(){
         return currentCoins;
     }
 }
