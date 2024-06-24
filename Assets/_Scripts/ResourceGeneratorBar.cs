@@ -6,18 +6,19 @@ using UnityEngine.UI;
 
 public class ResourceGeneratorBar : MonoBehaviour
 {
+    [Header("Components")]
     [SerializeField] private TextMeshProUGUI generationAmountText;
     [SerializeField] private Image fillSprite;
 
-    private ResourceGenerator resourceGenerator;
+    [Header("InspectorOnly")]
+    [SerializeField]private ResourceGenerator resourceGenerator;
 
     private void Update(){
         fillSprite.fillAmount = 1 - resourceGenerator.GetTimerNormalized();
         generationAmountText.SetText(resourceGenerator.GetAmountGeneration().ToString() + "/S");
     }
 
-    public void SetBarGenerator(ResourceGenerator resourceGenerator){
+    public void SetBarResourceGenerator(ResourceGenerator resourceGenerator){
         this.resourceGenerator = resourceGenerator;
     }
-    
 }

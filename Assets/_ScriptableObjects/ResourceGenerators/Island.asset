@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   generatorName: Island
   generationTime: 15
-  generatorCount: 0
   generationAmount: 20
+  generatorCount: 0
+  showPrice: 0
+  unlockPrice: 250
   price: 500
   sprite: {fileID: 21300000, guid: 3043a19ec0f356740b96dbb45291f31c, type: 3}
   isActive: 0
+  isUnlockable: 0

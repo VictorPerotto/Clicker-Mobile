@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   generatorName: Ship
   generationTime: 4
-  generatorCount: 0
   generationAmount: 10
+  generatorCount: 0
+  showPrice: 0
+  unlockPrice: 125
   price: 250
   sprite: {fileID: 21300000, guid: f779475861ad91841b5fdaa406fa30e9, type: 3}
   isActive: 0
+  isUnlockable: 0
