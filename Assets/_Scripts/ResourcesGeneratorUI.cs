@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using BreakInfinity;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,7 +21,7 @@ public class ResourcesGeneratorUI : HideableInterface
     void Update(){
     if(timer <= 0){
             timer = timerMax;
-            double currentCoins = CoinsManager.Instance.GetCurrentCoins();
+            BigDouble currentCoins = CoinsManager.Instance.GetCurrentCoins();
             if(resourceGeneratorSingleUIList.Count > 0){
                 for(int i =0; i < resourceGeneratorSingleUIList.Count; i ++){
                     if(currentCoins < resourceGeneratorSingleUIList[i].GetResourceGeneratorSO().unlockPrice){

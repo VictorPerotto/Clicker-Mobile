@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using BreakInfinity;
 using TMPro;
 using UnityEngine;
 
@@ -14,9 +14,9 @@ public class UpperUI : MonoBehaviour{
         SetCoinsText(CoinsManager.Instance.GetCurrentCoins());
     }
 
-    private void SetCoinsText(double amount){
-        string amountText = amount.ToString();
-
+    private void SetCoinsText(BigDouble amount){
+        string amountText = Methods.Notate(amount);
+        
         coinsText.SetText(amountText);
     }
 }

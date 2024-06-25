@@ -1,4 +1,5 @@
 using System;
+using BreakInfinity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,10 +10,10 @@ public class CoinsManager : MonoBehaviour
     public event EventHandler<OnCurrentCoinsChangedArgs> OnCurrentCoinsChanged;
 
     public class OnCurrentCoinsChangedArgs : EventArgs{
-        public double currentCoins;
+        public BigDouble currentCoins;
     }
 
-    [SerializeField] private double currentCoins;
+    [SerializeField] private BigDouble currentCoins;
     
     private void Awake(){
         if(Instance == null){
@@ -20,17 +21,17 @@ public class CoinsManager : MonoBehaviour
         }
     }
 
-    public void AddCoins(double amount){
+    public void AddCoins(BigDouble amount){
         OnCurrentCoinsChanged?.Invoke(this, new OnCurrentCoinsChangedArgs{currentCoins = currentCoins});
         currentCoins += amount;
     }
 
-    public void SubtractCoins(double amount){
+    public void SubtractCoins(BigDouble amount){
         OnCurrentCoinsChanged?.Invoke(this, new OnCurrentCoinsChangedArgs{currentCoins = currentCoins});
         currentCoins -= amount;
     }
 
-    public double GetCurrentCoins(){
+    public BigDouble GetCurrentCoins(){
         return currentCoins;
     }
 }

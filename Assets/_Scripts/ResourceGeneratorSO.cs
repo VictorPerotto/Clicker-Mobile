@@ -13,6 +13,4 @@ public class ResourceGeneratorSO : ScriptableObject{
     public double unlockPrice;
     public double price;
     public Sprite sprite;
-    public bool isActive;
-    public bool isUnlockable;
 }

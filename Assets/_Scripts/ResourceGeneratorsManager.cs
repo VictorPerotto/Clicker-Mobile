@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using BreakInfinity;
 using UnityEngine;
 
 public class ResourceGeneratorsManager : MonoBehaviour{
@@ -13,7 +14,7 @@ public class ResourceGeneratorsManager : MonoBehaviour{
     }
 
     public void BuyResourceGenerator(ResourceGeneratorSO resourceGenerator){
-        double totalCoins = CoinsManager.Instance.GetCurrentCoins();
+        BigDouble totalCoins = CoinsManager.Instance.GetCurrentCoins();
 
         if(totalCoins >= resourceGenerator.price){
             resourceGenerator.generatorCount += 1;
