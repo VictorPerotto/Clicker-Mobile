@@ -7,7 +7,6 @@ public class UpperUI : MonoBehaviour{
     [SerializeField] private TextMeshProUGUI coinsText;
 
     private void Start(){
-
     }
 
     private void Update(){
