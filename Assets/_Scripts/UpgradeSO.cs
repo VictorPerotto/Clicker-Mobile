@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class UpgradeSO : ScriptableObject{
     [Header("Variables")]
     public UpgradeType upgradeType;
+    public BigDouble unlockPrice;
     public BigDouble price;
 
     [Header("Visuals")]
