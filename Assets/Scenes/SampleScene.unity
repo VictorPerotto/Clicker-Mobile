@@ -2097,8 +2097,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1242442993}
   - component: {fileID: 1242442994}
+  - component: {fileID: 1242442995}
   m_Layer: 5
-  m_Name: UpgradesUI
+  m_Name: UpgradeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2134,10 +2135,28 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242442992}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &1242442995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242442992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81a08fb488367654fbed0fb9e0e4e575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 1242442994}
+  upgradeListSO: {fileID: 11400000, guid: 7c5f2f5ab8c2d5e41b20e021045734d2, type: 2}
+  UpgradeSingleUIList: []
+  upgradeSingleUIPrefab: {fileID: 4975910663786505446, guid: ece04ef0497017a4a8fcdd73862f2149, type: 3}
+  content: {fileID: 942780665}
+  timerMax: 1
 --- !u!1 &1315360920
 GameObject:
   m_ObjectHideFlags: 0
@@ -2311,7 +2330,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1242442995}
         m_TargetAssemblyTypeName: HideableInterface, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
@@ -2533,6 +2552,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1456111921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1456111923}
+  - component: {fileID: 1456111922}
+  m_Layer: 0
+  m_Name: UpgradeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1456111922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456111921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74452c08be4611a4c8cab43a899c681f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickerManager: {fileID: 1851079759}
+--- !u!4 &1456111923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456111921}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1471467453
 GameObject:
   m_ObjectHideFlags: 0
@@ -3054,7 +3118,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickButton: {fileID: 900740999}
-  coinsPerClick: 2
+  coinsPerClick:
+    mantissa: 5
+    exponent: 0
 --- !u!1 &1885998316
 GameObject:
   m_ObjectHideFlags: 0
@@ -3178,7 +3244,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 825533137}
+      - m_Target: {fileID: 1242442995}
         m_TargetAssemblyTypeName: HideableInterface, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
@@ -3849,3 +3915,4 @@ SceneRoots:
   - {fileID: 991225063}
   - {fileID: 2079939874}
   - {fileID: 948291806}
+  - {fileID: 1456111923}

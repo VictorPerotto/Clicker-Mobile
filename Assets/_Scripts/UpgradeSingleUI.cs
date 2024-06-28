@@ -20,24 +20,12 @@ public class UpgradeSingleUI : MonoBehaviour{
     }
 
     private void OnBuyButtonClicked(){
-        switch(upgradeSO.upgradeType){
-            case UpgradeType.clickPower:
-                throw new NotImplementedException();
-            break;
-
-            case UpgradeType.generatorPower:
-                throw new NotImplementedException();
-            break;
-
-            case UpgradeType.generatorTimer:
-                throw new NotImplementedException();
-            break;
-        }
+        UpgradeManager.Instance.OnBuyButtonClicked(upgradeSO, this);
     }
 
     private void UpdateUpgradeUI(){
         descriptionText.SetText(upgradeSO.descriptionText) ;
-        buyText.SetText(upgradeSO.price.ToString());
+        buyText.SetText(upgradeSO.price.ToString() + " <sprite index=0>");
         titleText.SetText(upgradeSO.titleText) ;      
         iconSprite.sprite = upgradeSO.icon;
     }
